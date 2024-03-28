@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import MainPage from "./components/MainPage.jsx";
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
 import reportWebVitals from "./reportWebVitals.js";
 import { SharedStateProvider } from "./SharedContext.jsx";
 
@@ -10,7 +11,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SharedStateProvider>
-      <MainPage />
+      <Header />
+      <Hero />
     </SharedStateProvider>
   </React.StrictMode>
 );
