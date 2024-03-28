@@ -29,7 +29,6 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("/public/heroPhone.webp");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
