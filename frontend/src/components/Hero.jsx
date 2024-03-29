@@ -29,18 +29,20 @@ function Hero() {
   useEffect(() => {
     // Set initial background zoom
     document.getElementById("backgroundImage").style.backgroundSize = `${backgroundZoom}%`;
-    document.getElementById("backgroundImage").style.backgroundPosition = "center"; // Center the background position
+    document.getElementById("backgroundImage").style.backgroundPosition = "center";
   }, [backgroundZoom]);
 
   return (
     <div className="relative h-screen">
+      {/* Hero background image */}
       <div
         id="backgroundImage"
         className="bg-fixed h-full w-full relative"
         style={{ backgroundImage: 'url("./heroPhone.webp")', backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay layer */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
+      {/* Hero information */}
       <div
         className="header bg-fixed flex justify-center items-center fixed 
       top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
