@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import OnGoingCommercials from "./OnGoingCommercials";
 
 function Hero() {
   const [backgroundZoom, setBackgroundZoom] = useState(100);
@@ -48,19 +49,8 @@ function Hero() {
         <h1 className=" text-white text-center">Gör din röst hörd!</h1>
       </div>
       <div className="Content bg-slate-200 rounded-2xl p-3 pt-4 -translate-y-[20rem]">
-        <a href="" className="lol ">
-          contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont entcontentcontent
-          contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont entcontentcontent
-          contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont entcontentcontent
-          contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont entcontentcontent
-          contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont entcontentcontent
-          contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont entcontentcontent
-          contentcontentcon tentconten tcont contentcontentcon tentconten tcontentconten tconten tcontentcont
-          entcontentcont entcontentcontent contentcontentcon tentconten tcontentconten tconten tcontentcont
-          entcontentcont contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont
-          entcontentcontent contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont
-          entcontentcontent contentcontentcon tentconten tcontentconten tconten tcontentcont entcontentcont
-        </a>
+        {/* Commercials */}
+        <OnGoingCommercials />
       </div>
     </div>
   );
