@@ -1,5 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiFilter } from "react-icons/fi";
+
+async function getCommercials() {
+  try {
+    const response = await fetch("http://localhost:5000/api/commercials");
+    if (!response.ok) {
+      throw new Error("Failed to fetch commercials");
+    }
+    const commercials = await response.json();
+    console.log("Commercials:", commercials);
+  } catch (error) {
+    console.error("Error fetching commercials:", error.message);
+  }
+}
 
 function Header() {
   return (
@@ -15,7 +28,7 @@ function Header() {
           <FiFilter />
         </button>
         {/* Hamburger-menu button */}
-        <button className="hamburger-menu p-[9.5px] bg-slate-200 rounded-md">
+        <button className="hamburger-menu p-[9.5px] bg-slate-200 rounded-md" onClick={() => getCommercials()}>
           <span className="bar bg-slate-800 h-1 w-6 block mb-1 rounded-sm"></span>
           <span className="bar bg-slate-800 h-1 w-6 block mb-1 rounded-sm"></span>
           <span className="bar bg-slate-800 h-1 w-6 block rounded-sm"></span>
@@ -26,10 +39,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  /* <div className="Hero relative flex justify-center" style={{ height: "60vh" }}>
-        <img className="w-full h-full object-cover" src="./hero.png" alt="Hero" />
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-      </div> */
-}

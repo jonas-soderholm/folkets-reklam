@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Header from "./components/Header.jsx";
-import Hero from "./components/Hero.jsx";
+import Hero from "./components/hero/Hero.jsx";
 import reportWebVitals from "./reportWebVitals.js";
 import { SharedStateProvider } from "./SharedContext.jsx";
 

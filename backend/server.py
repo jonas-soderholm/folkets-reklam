@@ -1,15 +1,22 @@
 from flask import Flask, jsonify
+from pymongo import MongoClient
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-# Sample commercials data
-commercials = [
-    {"name": "Commercial 1", "amount_of_donations": 0, "maximum_amount_raised": 5000, "current_amount_raised": 2000},
-]
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['test']  
+collection = db['test_collection']  
 
 @app.route('/api/commercials')
 def get_commercials():
-    return jsonify(commercials)
+    mycollection_data = list(collection.find())
+    # Convert ObjectId objects to strings
+    for doc in mycollection_data:
+        doc['_id'] = str(doc['_id'])
+    return jsonify(mycollection_data)
 
 @app.route('/')
 def hello():
