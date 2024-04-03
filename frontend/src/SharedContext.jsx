@@ -8,6 +8,7 @@ export const useSharedState = () => {
 
 export const SharedStateProvider = ({ children }) => {
   const [markers, setMarkers] = useState([]);
+  const [rerenderCommercials, setRerenderCommercials] = useState(false);
 
   return (
     <MarkerStateContext.Provider

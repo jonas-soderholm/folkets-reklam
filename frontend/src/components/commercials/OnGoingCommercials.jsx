@@ -1,8 +1,40 @@
-import React, { useEffect } from "react";
-import DataBaseCommercials from "./DataBaseCommercials";
+import React, { useEffect, useState } from "react";
+import { addDonation } from "./donation_handler";
 
 function MapCommercials() {
-  const commercials = DataBaseCommercials();
+  const [commercials, setCommercials] = useState([]);
+  const [rerenderCommercial, setRerenderCommercial] = useState(false);
+
+  // Get commercials from DB
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:5000/api/commercials");
+        if (!response.ok) {
+          throw new Error("Failed to fetch");
+        }
+
+        const data = await response.json();
+        setCommercials(data);
+      } catch (error) {
+        console.error("Error fetching data");
+      }
+    };
+    fetchData();
+    console.log("RENDERED");
+  }, [rerenderCommercial]);
+
+  // Donate update DB + rerender
+  async function donationHandler(id, amount) {
+    try {
+      const donationAdded = await addDonation(id, amount);
+      if (donationAdded) {
+        setRerenderCommercial((prev) => !prev);
+      }
+    } catch (error) {
+      console.error("Error adding donation:", error.message);
+    }
+  }
 
   return (
     <>
@@ -35,6 +67,12 @@ function MapCommercials() {
               {/* Ammount raised */}
               <h1 className="flex text-sm mb-12">Totalt just nu: {commercial.current_amount_raised}kr</h1>
             </div>
+            <button className="" onClick={() => donationHandler(commercial._id, -200)}>
+              Remove
+            </button>
+            <button className="" onClick={() => donationHandler(commercial._id, 200)}>
+              Add
+            </button>
           </div>
         </div>
       ))}
@@ -46,11 +84,9 @@ const progressionBarCalculator = (currentAmount, goalAmount) => {
   return (currentAmount / goalAmount) * 100;
 };
 
-function OnGoingCommercials() {
+function DropDownMenu() {
   return (
     <>
-      {/* Header */}
-      <div className="mb-1 text-2xl">Pågående insamlingar</div>
       {/* Dropdown */}
       <div className="dropdown mb-10 mt-4">
         <select className=" bg-slate-800 rounded-full px-3 py-2 text-white text-sm">
@@ -59,7 +95,18 @@ function OnGoingCommercials() {
           <option value="Hello3">Senast tillagda</option>
         </select>
       </div>
-      {/* Render the commercial cards */}
+    </>
+  );
+}
+
+function OnGoingCommercials() {
+  return (
+    <>
+      {/* Header */}
+      <div className="mb-1 text-2xl">Pågående insamlingar</div>
+      {/* Dropdown menu */}
+      <DropDownMenu />
+      {/* Commercials */}
       <MapCommercials />
     </>
   );
