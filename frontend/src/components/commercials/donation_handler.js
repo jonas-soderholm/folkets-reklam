@@ -1,7 +1,19 @@
 // import { useSharedState } from "../../SharedContext";
 // const { rerender, setRerenderCommercials } = useSharedState(); // Move inside the function
 
-export async function addDonation(id, amount) {
+// Donate update DB + rerender
+export async function donationHandler(id, amount) {
+  try {
+    const donationAdded = await updateDonationsOnDataBase(id, amount);
+    if (donationAdded) {
+      //setRerenderCommercial((prev) => !prev);
+    }
+  } catch (error) {
+    console.error("Error adding donation:", error.message);
+  }
+}
+
+export async function updateDonationsOnDataBase(id, amount) {
   try {
     const response = await fetch(`http://127.0.0.1:5000/api/addDonation`, {
       method: "POST",

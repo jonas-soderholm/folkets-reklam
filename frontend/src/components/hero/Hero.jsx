@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import OnGoingCommercials from "../commercials/OnGoingCommercials";
+import OnGoingCommercials from "../commercials/ActiveCommercials";
 import { useScrollEffect } from "./useScrollEffect";
 
 function Hero() {
