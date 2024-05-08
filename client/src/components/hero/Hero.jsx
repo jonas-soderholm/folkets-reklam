@@ -16,7 +16,7 @@ function Hero() {
   }, [backgroundZoom]);
 
   return (
-    <div className="mainPage relative h-[80vh]">
+    <div className="mainPage relative h-[60vh]">
       {/* Hero background image */}
       <div
         id="backgroundImage"
@@ -33,12 +33,10 @@ function Hero() {
       >
         <h1 className=" text-white text-center">Gör din röst hörd!</h1>
       </div>
-      <div className="activeCommercials absolute bottom-0 w-full bg-slate-200 rounded-t-2xl p-3 pt-4">
-        {/* Commercials */}
-        <ActiveCommercials />
-      </div>
+      {/* <div className="activeCommercials relative bottom-0 w-full bg-slate-500 rounded-t-2xl"></div> */}
     </div>
   );
 }
 
 export default Hero;
+// -translate-y-[10rem]

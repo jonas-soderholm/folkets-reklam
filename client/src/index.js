@@ -4,6 +4,7 @@ import "./index.css";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Hero from "./components/hero/Hero.jsx";
+import ActiveCommercials from "./components/commercials/ActiveCommercials.jsx";
 import reportWebVitals from "./reportWebVitals.js";
 import { SharedStateProvider } from "./SharedContext.jsx";
 
@@ -14,6 +15,7 @@ root.render(
     <SharedStateProvider>
       <Header />
       <Hero />
+      <ActiveCommercials />
       <Footer />
     </SharedStateProvider>
   </React.StrictMode>

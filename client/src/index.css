@@ -23,6 +23,10 @@
   transition: all 0.3s ease;
 }
 
+.card-background {
+  background-color: #e1e1e1;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -33,4 +37,13 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-repeat: none;
+  background-color: #e1e1e1;
+}
+
+.hover-zoom:hover .image-zoom {
+  transform: scale(1.05); /* Adjust the scale factor to control the level of zoom */
+}
+
+.image-zoom {
+  transition: transform 0.5s ease;
 }
