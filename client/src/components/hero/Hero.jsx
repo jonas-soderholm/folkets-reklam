@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import OnGoingCommercials from "../commercials/ActiveCommercials";
+import ActiveCommercials from "../commercials/ActiveCommercials";
 import { useScrollEffect } from "./useScrollEffect";
 
 function Hero() {
@@ -16,7 +16,7 @@ function Hero() {
   }, [backgroundZoom]);
 
   return (
-    <div className="mainPage relative h-screen">
+    <div className="mainPage relative h-[80vh]">
       {/* Hero background image */}
       <div
         id="backgroundImage"
@@ -33,9 +33,9 @@ function Hero() {
       >
         <h1 className=" text-white text-center">Gör din röst hörd!</h1>
       </div>
-      <div className="ongoingCommercials bg-slate-200 rounded-2xl p-3 pt-4 -translate-y-[20rem]">
+      <div className="activeCommercials absolute bottom-0 w-full bg-slate-200 rounded-t-2xl p-3 pt-4">
         {/* Commercials */}
-        <OnGoingCommercials />
+        <ActiveCommercials />
       </div>
     </div>
   );

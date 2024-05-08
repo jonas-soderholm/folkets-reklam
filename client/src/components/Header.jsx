@@ -16,7 +16,7 @@ async function getCommercials() {
 
 function Header() {
   return (
-    <div className="header flex bg-black z-[100] sticky top-0">
+    <div className="header flex dark:bg-neutral-800 z-[100] sticky top-0">
       {/* Header */}
       <div className="flex w-1/3 items-center ml-4 my-7">
         <div className="text-1xl text-slate-200">Folkets reklam</div>

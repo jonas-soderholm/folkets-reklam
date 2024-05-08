@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import Hero from "./components/hero/Hero.jsx";
 import reportWebVitals from "./reportWebVitals.js";
 import { SharedStateProvider } from "./SharedContext.jsx";
@@ -13,6 +14,7 @@ root.render(
     <SharedStateProvider>
       <Header />
       <Hero />
+      <Footer />
     </SharedStateProvider>
   </React.StrictMode>
 );
