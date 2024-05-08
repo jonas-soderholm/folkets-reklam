@@ -27,6 +27,12 @@ function MapCommercials() {
     fetchData();
   }, []);
 
+  // Handle card click
+  const handleCardClick = (commercialId) => {
+    // history.push(`/donations/${commercialId}`);
+    console.log(commercialId);
+  };
+
   return (
     <>
       {/* Commercial cards */}
@@ -35,6 +41,7 @@ function MapCommercials() {
           <div
             key={commercial.id}
             className="commercials-cards flex mb-3 mx-10 bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
+            onClick={() => handleCardClick(commercial.id)} // Call handleCardClick when the card is clicked
           >
             <div className="commercial-image flex overflow-hidden rounded-xl">
               <img
