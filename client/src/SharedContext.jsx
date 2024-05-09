@@ -1,23 +1,22 @@
 import React, { createContext, useContext, useState } from "react";
 
-const MarkerStateContext = createContext();
+const StateContext = createContext();
 
 export const useSharedState = () => {
-  return useContext(MarkerStateContext);
+  return useContext(StateContext);
 };
 
 export const SharedStateProvider = ({ children }) => {
-  const [markers, setMarkers] = useState([]);
-  const [rerenderCommercials, setRerenderCommercials] = useState(false);
+  const [selectedStatus, setSelectedStatus] = useState("active");
 
   return (
-    <MarkerStateContext.Provider
+    <StateContext.Provider
       value={{
-        markers,
-        setMarkers,
+        selectedStatus,
+        setSelectedStatus,
       }}
     >
       {children}
-    </MarkerStateContext.Provider>
+    </StateContext.Provider>
   );
 };
