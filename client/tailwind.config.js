@@ -5,7 +5,23 @@ module.exports = {
     "./public/index.html", // Updated path to the public directory
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          "Roboto",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          "Fira Sans",
+          "Droid Sans",
+          "Helvetica Neue",
+          "sans-serif",
+        ],
+      },
+    },
   },
   plugins: [],
 };

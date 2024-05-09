@@ -21,8 +21,14 @@ function Hero() {
         {/* Hero background image */}
         <div
           id="backgroundImage"
-          className="bg-fixed h-full w-full relative"
-          style={{ backgroundImage: 'url("./heroPhone.webp")', backgroundSize: "cover", backgroundPosition: "center" }}
+          className="h-full w-full md:scale-[1] scale-[2.5] relative opacity-100"
+          style={{
+            backgroundImage: 'url("./flowers_4.webp")',
+            // backgroundSize: "cover",
+            // backgroundPosition: "center",
+            // backgroundRepeat: "repeat",
+            // transform: "scale(2)",
+          }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
@@ -30,10 +36,10 @@ function Hero() {
       </div>
       <div
         className="header flex justify-center items-center fixed 
-          top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         style={{ top: "35%", left: "50%", transform: "translate(-50%, -50%)", fontSize: `${textZoom}px` }}
       >
-        <h1 className=" text-white text-center ">Gör din röst hörd!</h1>
+        <h1 className="text-white text-center whitespace-nowrap">Gör din röst hörd!</h1>
       </div>
     </>
   );

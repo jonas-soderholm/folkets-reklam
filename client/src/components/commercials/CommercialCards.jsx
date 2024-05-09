@@ -34,7 +34,7 @@ function MapCommercials() {
   return (
     <>
       {/* Commercial cards */}
-      <div className="flex flex-wrap gap-12 justify-center z-10">
+      <div className="flex flex-wrap gap-12 justify-center">
         {commercials
           .filter((commercial) => commercial.status === selectedStatus)
           .map((commercial) => (
@@ -76,7 +76,6 @@ function MapCommercials() {
               </div>
             </div>
           ))}
-        {/* <img className="background-flowers absolute overflow-hidden z-0 rounded-xl" src="./flowers_2.png" alt="" /> */}
       </div>
     </>
   );

@@ -7,8 +7,8 @@ export function useScrollEffect() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const newBackgroundZoom = 100 + scrollY * 0.05;
-      const newTextZoom = 30 + scrollY * 0.03;
+      const newBackgroundZoom = 100 + scrollY * 0.04;
+      const newTextZoom = 45 + scrollY * 0.02;
 
       setBackgroundZoom(newBackgroundZoom);
       setTextZoom(newTextZoom);

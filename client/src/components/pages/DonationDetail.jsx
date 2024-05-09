@@ -40,7 +40,7 @@ function DonationDetail() {
               src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
               alt=""
             /> */}
-            <img class="h-[24rem] w-[24rem] rounded-lg object-cover" src="/sthlm.jpg" alt="" />
+            <img class="h-[24rem] w-[24rem] rounded-lg object-cover" src="/flowers_3.webp" alt="" />
           </div>
           <div className="information flex md:flex-row md:items-start md:text-left">
             {/* <div className="information mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border-4 px-4 py-4 text-center md:max-w-lg md:flex-row md:items-start md:text-left"> */}
