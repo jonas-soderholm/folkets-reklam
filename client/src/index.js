@@ -17,11 +17,9 @@ root.render(
     <SharedStateProvider>
       <Header />
       <Router>
-        {/* Use Routes to contain Route components */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/donations/:id" element={<DonationDetail />} />
-          {/* Define a catch-all route for 404 pages */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>

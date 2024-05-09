@@ -5,6 +5,7 @@ import { useSharedState } from "../../SharedContext.jsx";
 function MapCommercials() {
   const [commercials, setCommercials] = useState([]);
   const { selectedStatus, setSelectedStatus } = useSharedState();
+  const { selectedCommercial, setSelectedCommercial } = useSharedState();
 
   // Get commercials from DB
   useEffect(() => {
@@ -25,24 +26,22 @@ function MapCommercials() {
     fetchData();
   }, []);
 
-  const handleCardClick = (commercialId) => {
-    const url = `/donations/${commercialId}`;
+  const handleCardClick = (commercial) => {
+    const url = `/donations/${commercial.id}`;
     window.location.href = url;
   };
-
-  console.log(selectedStatus);
 
   return (
     <>
       {/* Commercial cards */}
-      <div className="flex flex-wrap gap-12 justify-center">
+      <div className="flex flex-wrap gap-12 justify-center z-10">
         {commercials
           .filter((commercial) => commercial.status === selectedStatus)
           .map((commercial) => (
             <div
               key={commercial.id}
               className="commercials-cards flex mx-10 bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
-              onClick={() => handleCardClick(commercial.id)} // Call handleCardClick when the card is clicked
+              onClick={() => handleCardClick(commercial)}
             >
               <div className="commercial-image flex overflow-hidden rounded-xl">
                 <img
@@ -56,10 +55,10 @@ function MapCommercials() {
                 {/* Ammount of donations */}
                 <a className="flex text-sm font-thin">Antal donationer: {commercial.amount_of_donations}</a>
                 {/* Commercial name */}
-                <h1 className="flex mt-1 text-[18px] max-w-[10rem]">{commercial.name}</h1>
+                <h1 className="flex mt-1 text-[18px] max-w-[25rem] break-words">{commercial.name}</h1>
                 <div className="currently-raised flex-column"></div>
                 {/* Amount raised */}
-                <div className="amount relative bottom-0 mt-2 md:mt-[7.5rem]">
+                <div className="amount relative bottom-0 mt-10 md:mt-[9.5rem]">
                   <h1 className="text-sm">Totalt just nu: {commercial.current_donation_amount}kr</h1>
                   {/* Amount raised progression bar */}
                   <div className="visual flex-row bg-gray-500 rounded-full">
@@ -77,9 +76,14 @@ function MapCommercials() {
               </div>
             </div>
           ))}
+        {/* <img className="background-flowers absolute overflow-hidden z-0 rounded-xl" src="./flowers_2.png" alt="" /> */}
       </div>
     </>
   );
 }
 
 export default MapCommercials;
+
+// test_commercial_active
+// test_commercial_info
+// test_commercial_name

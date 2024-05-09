@@ -9,6 +9,7 @@ function ActiveCommercials() {
         <div className=" p-[2rem] justify-center flex">
           {/* Pågående insamlingar */}
           {/* Dropdown menu */}
+
           <DropDownMenu />
         </div>
         {/* Commercials */}

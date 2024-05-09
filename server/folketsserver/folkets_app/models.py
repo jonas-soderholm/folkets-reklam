@@ -7,3 +7,4 @@ class OngoingCommercial(models.Model):
     info = models.CharField(max_length=100)
     amount_of_donations = models.IntegerField(null=True) 
     status = models.CharField(max_length=100, default='active')
+    img = models.CharField(max_length=100, default='img')

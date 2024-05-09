@@ -8,12 +8,15 @@ export const useSharedState = () => {
 
 export const SharedStateProvider = ({ children }) => {
   const [selectedStatus, setSelectedStatus] = useState("active");
+  const [selectedCommercial, setSelectedCommercial] = useState({});
 
   return (
     <StateContext.Provider
       value={{
         selectedStatus,
         setSelectedStatus,
+        selectedCommercial,
+        setSelectedCommercial,
       }}
     >
       {children}
