@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { updateDonationsOnDataBase } from "./donation_handler";
 import { progressionBarCalculator } from "./progression_bar";
-import { donationHandler } from "./donation_handler";
-import Footer from "../Footer.jsx";
 
 function MapCommercials() {
   const [commercials, setCommercials] = useState([]);
@@ -29,18 +26,19 @@ function MapCommercials() {
 
   // Handle card click
   const handleCardClick = (commercialId) => {
-    // history.push(`/donations/${commercialId}`);
-    console.log(commercialId);
+    const url = `/donations/${commercialId}`;
+    // window.open(url, "_blank");
+    window.location.href = url;
   };
 
   return (
     <>
       {/* Commercial cards */}
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap gap-12 justify-center">
         {commercials.map((commercial) => (
           <div
             key={commercial.id}
-            className="commercials-cards flex mb-3 mx-10 bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
+            className="commercials-cards flex mx-10 bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
             onClick={() => handleCardClick(commercial.id)} // Call handleCardClick when the card is clicked
           >
             <div className="commercial-image flex overflow-hidden rounded-xl">
@@ -63,7 +61,7 @@ function MapCommercials() {
                 {/* Ammount raised progression bar */}
                 <div className="visual flex-row bg-gray-500 rounded-full">
                   <div
-                    className="mb-4 h-2 bg-green-500 rounded-full"
+                    className="h-2 bg-green-500 rounded-full"
                     style={{
                       width: `${progressionBarCalculator(
                         commercial.current_donation_amount,
