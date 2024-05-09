@@ -23,7 +23,7 @@ function AboutBanner() {
         </div>
 
         <h1 className=" md:text-3xl text-2xl mx-6 mt-[8rem] mb-8">{banner_text[1].Header}</h1>
-        <div className=" bg-[#98cfb1] md:p-[8rem] p-[2rem] mx-6 rounded-xl mb-[8rem]">
+        <div className=" bg-[#98cfb1] md:p-[8rem] p-[2rem] mx-6 rounded-xl mb-[0rem]">
           <p className=" md:text-xl text-s ">{banner_text[1].info}</p>
         </div>
       </div>

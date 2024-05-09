@@ -40,7 +40,7 @@ function MapCommercials() {
           .map((commercial) => (
             <div
               key={commercial.id}
-              className="commercials-cards flex mx-10 bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
+              className="commercials-cards flex justify-between mx-auto bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
               onClick={() => handleCardClick(commercial)}
             >
               <div className="commercial-image flex overflow-hidden rounded-xl">
@@ -51,26 +51,29 @@ function MapCommercials() {
                 />
               </div>
               {/* Info */}
-              <div className="commercial-info flex-column ml-4 ">
+              <div className="commercial-info flex-column ml-4 max-w-[10rem]">
                 {/* Ammount of donations */}
                 <a className="flex text-sm font-thin">Antal donationer: {commercial.amount_of_donations}</a>
                 {/* Commercial name */}
-                <h1 className="flex mt-1 text-[18px] max-w-[25rem] break-words">{commercial.name}</h1>
-                <div className="currently-raised flex-column"></div>
+                <a className="flex text-sm font-bold my-4">
+                  Cigaretter skaetter ska bo {commercial.amount_of_donations}
+                </a>
                 {/* Amount raised */}
-                <div className="amount relative bottom-0 mt-10 md:mt-[9.5rem]">
-                  <h1 className="text-sm">Totalt just nu: {commercial.current_donation_amount}kr</h1>
-                  {/* Amount raised progression bar */}
-                  <div className="visual flex-row bg-gray-500 rounded-full">
-                    <div
-                      className="h-2 bg-green-500 rounded-full"
-                      style={{
-                        width: `${progressionBarCalculator(
-                          commercial.current_donation_amount,
-                          commercial.max_donation_amount
-                        )}%`,
-                      }}
-                    ></div>
+                <div className="relative bottom-0">
+                  <div className="amount">
+                    <h1 className="text-sm">Totalt just nu: {commercial.current_donation_amount}kr</h1>
+                    {/* Amount raised progression bar */}
+                    <div className="visual flex-row bg-gray-500 rounded-full">
+                      <div
+                        className="h-2 bg-green-500 rounded-full"
+                        style={{
+                          width: `${progressionBarCalculator(
+                            commercial.current_donation_amount,
+                            commercial.max_donation_amount
+                          )}%`,
+                        }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               </div>

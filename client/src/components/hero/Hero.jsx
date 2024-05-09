@@ -21,7 +21,7 @@ function Hero() {
         {/* Hero background image */}
         <div
           id="backgroundImage"
-          className="h-full w-full md:scale-[1] scale-[2.5] relative opacity-100"
+          className="h-full w-full md:scale-[1.2] scale-[2.5] relative opacity-100"
           style={{
             backgroundImage: 'url("./flowers_4.webp")',
             // backgroundSize: "cover",

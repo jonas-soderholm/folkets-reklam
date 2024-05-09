@@ -31,16 +31,15 @@ function DonationDetail() {
   }, [id]);
 
   return (
-    <div>
+    <div className="mb-[70vh] mx-4">
       {filteredCommercial ? (
-        <div className="flex flex-row flex-wrap items-center md:my-[15rem] justify-center my-[2rem]">
+        <div className="flex flex-row flex-wrap items-center md:my-[15rem] justify-center mt-[2rem] ">
           <div className="image">
-            {/* <img
-              class="h-auto rounded-lg object-cover w-auto"
-              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
+            <img
+              class="md:w-[25rem] md:h-auto h-auto w-[20rem] rounded-lg object-cover mb-[2rem]"
+              src="/flowers_3.webp"
               alt=""
-            /> */}
-            <img class="h-[24rem] w-[24rem] rounded-lg object-cover" src="/flowers_3.webp" alt="" />
+            />
           </div>
           <div className="information flex md:flex-row md:items-start md:text-left">
             {/* <div className="information mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border-4 px-4 py-4 text-center md:max-w-lg md:flex-row md:items-start md:text-left"> */}
@@ -48,16 +47,16 @@ function DonationDetail() {
             <div className="">
               <p className="text-xl font-medium text-gray-700">{filteredCommercial.name}</p>
               <p className="mb-4 text-sm font-medium text-gray-500">{filteredCommercial.status}</p>
-              <div className="flex space-x-2">
-                <div className="flex flex-col items-center rounded-xl bg-gray-100 px-4 py-2">
+              <div className="flex justify-between ">
+                <div className="flex flex-col items-center rounded-xl bg-gray-100 md:px-5 px-4 py-2">
                   <p className="text-sm font-medium text-gray-500">Donationer</p>
                   <p className="text-3xl font-medium text-gray-600">{filteredCommercial.amount_of_donations}</p>
                 </div>
-                <div className="flex flex-col items-center rounded-xl bg-gray-100 px-4 py-2">
+                <div className="flex flex-col items-center rounded-xl bg-gray-100 md:px-5 px-4 py-2">
                   <p className="text-sm font-medium text-gray-500">Totalt</p>
                   <p className="text-3xl font-medium text-gray-600">{filteredCommercial.current_donation_amount}kr</p>
                 </div>
-                <div className="flex flex-col items-center rounded-xl bg-gray-100 px-4 py-2">
+                <div className="flex flex-col items-center rounded-xl bg-gray-100 md:px-5 px-4 py-2">
                   <p className="text-sm font-medium text-gray-500">Mål</p>
                   <p className="text-3xl font-medium text-gray-600">{filteredCommercial.max_donation_amount}kr</p>
                 </div>
@@ -74,17 +73,6 @@ function DonationDetail() {
                 <button className="w-full rounded-lg border-2 border-transparent bg-[#43ce82] px-4 py-2 font-medium text-white">
                   Donera
                 </button>
-              </div>
-              <div className="visual flex-row bg-gray-500 rounded-full">
-                <div
-                  className="h-2 mt-6 bg-green-500 rounded-full"
-                  style={{
-                    width: `${progressionBarCalculator(
-                      filteredCommercial.current_donation_amount,
-                      filteredCommercial.max_donation_amount
-                    )}%`,
-                  }}
-                ></div>
               </div>
             </div>
           </div>
