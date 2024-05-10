@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@material-tailwind/react": "^2.1.9",
-    "react-router-dom": "^6.23.0"
-  }
-}
