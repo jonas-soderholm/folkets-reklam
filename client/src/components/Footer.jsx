@@ -8,7 +8,7 @@ export default function Footer() {
           <div class="w-full p-4 md:py-8">
             <div class="flex items-center justify-between">
               <a href="" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img className="logo w-[2rem] mr-4" src="/logo_flower.png" alt="" />
+                <img className="logo w-[2rem] mr-4" src="/pink_logo.png" alt="" />
                 <div className="md:text-3xl text-1xl text-slate-200">Folkets reklam</div>
               </a>
               <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">

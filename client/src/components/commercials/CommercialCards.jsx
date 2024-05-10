@@ -45,8 +45,8 @@ function MapCommercials() {
             >
               <div className="commercial-image flex overflow-hidden rounded-xl">
                 <img
-                  className="size-[8rem] w-[8rem] h-[8rem] md:w-[25rem] md:h-[15rem] rounded-xl image-zoom"
-                  src="./hero.png"
+                  className="size-[8rem] w-[8rem] h-[8rem] md:w-[25rem] md:h-[15rem] rounded-xl image-zoom object-cover"
+                  src={commercial.img}
                   alt=""
                 />
               </div>

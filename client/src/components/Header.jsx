@@ -12,7 +12,7 @@ function Header() {
       <div className="p-3 flex justify-between items-center">
         <div className="flex items-center">
           <a href="/">
-            <img className="logo md:w-[1.5rem] w-[1rem] mr-4" src="/logo_flower.png" alt="" />
+            <img className="logo md:w-[1.5rem] w-[1rem] mr-4" src="/pink_logo.png" alt="" />
           </a>
           <a href="/" className="md:text-2xl text-1xl text-slate-200">
             Folkets reklam
