@@ -8,12 +8,10 @@ function DonationDetail() {
   const { selectedCommercial, setSelectedCommercial } = useSharedState();
   const [filteredCommercial, setFilteredCommercial] = useState(null);
 
-  console.log(id);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/ongoing_commercials");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/ongoing_commercials`);
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
@@ -37,7 +35,7 @@ function DonationDetail() {
           <div className="image">
             <img
               class="md:w-[25rem] md:h-auto h-auto w-[20rem] rounded-lg object-cover mb-[2rem]"
-              src="/flowers_3.webp"
+              src={filteredCommercial.img}
               alt=""
             />
           </div>

@@ -7,11 +7,10 @@ function MapCommercials() {
   const { selectedStatus, setSelectedStatus } = useSharedState();
   const { selectedCommercial, setSelectedCommercial } = useSharedState();
 
-  // Get commercials from DB
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/ongoing_commercials");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/ongoing_commercials`);
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
@@ -83,7 +82,3 @@ function MapCommercials() {
 }
 
 export default MapCommercials;
-
-// test_commercial_active
-// test_commercial_info
-// test_commercial_name
