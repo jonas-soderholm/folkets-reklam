@@ -34,7 +34,7 @@ function MapCommercials() {
   return (
     <>
       {/* Commercial cards */}
-      <div className="flex flex-wrap gap-12 justify-center">
+      <div className="flex flex-wrap gap-12 justify-center md:mx-[10rem]">
         {commercials
           .filter((commercial) => commercial.status === selectedStatus)
           .map((commercial) => (
@@ -51,13 +51,11 @@ function MapCommercials() {
                 />
               </div>
               {/* Info */}
-              <div className="commercial-info flex-column ml-4 max-w-[10rem]">
+              <div className="commercial-info flex-column ml-4 max-w-[13rem]">
                 {/* Ammount of donations */}
                 <a className="flex text-sm font-thin">Antal donationer: {commercial.amount_of_donations}</a>
                 {/* Commercial name */}
-                <a className="flex text-sm font-bold my-4">
-                  Cigaretter skaetter ska bo {commercial.amount_of_donations}
-                </a>
+                <a className="flex text-sm font-bold my-4">{commercial.name}</a>
                 {/* Amount raised */}
                 <div className="relative bottom-0">
                   <div className="amount">

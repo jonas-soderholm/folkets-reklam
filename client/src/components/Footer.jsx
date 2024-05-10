@@ -3,46 +3,37 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <div className="card-background pt-[10rem] relative">
-        <div class="w-full relative min-h-screen flex items-center justify-center bg-[#489fad]">
-          <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
-            <div class="w-full text-7xl font-bold">
-              <h1 class="w-full md:w-2/3">Kan vi hjälpa dig?</h1>
-            </div>
-            <div class="flex mt-8 flex-col md:flex-row md:justify-between">
-              <p class="w-full md:w-2/3 text-slate-200">
-                To ensure that all Wikipedia content is verifiable, anyone may question an uncited claim. If your work
-                has been tagged
-              </p>
-              <div class="w-44 pt-6 md:pt-0">
-                <a class="bg-red-500 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">
-                  Contact US
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col">
-              <div class="flex mt-24 mb-12 flex-row justify-between">
-                <div class=""></div>
-                <a class="hidden md:block cursor-pointer text-slate-200 hover:text-white uppercase">About</a>
-                <a class="hidden md:block cursor-pointer text-slate-200 hover:text-white uppercase">Services</a>
-                <a class="hidden md:block cursor-pointer text-slate-200 hover:text-white uppercase">Why us</a>
-                <a class="hidden md:block cursor-pointer text-slate-200 hover:text-white uppercase">Contact</a>
-                <div class="flex flex-row space-x-8 items-center justify-between">
-                  <a>
-                    <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z"
-                        fill="white"
-                      />
-                    </svg>
+      <div className="pt-[10rem] relative bg-[#e1e1e1]">
+        <footer class="bg-white shadow dark:bg-neutral-800 ">
+          <div class="w-full p-4 md:py-8">
+            <div class="flex items-center justify-between">
+              <a href="" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img className="logo w-[2rem] mr-4" src="/logo_flower.png" alt="" />
+                <div className="md:text-3xl text-1xl text-slate-200">Folkets reklam</div>
+              </a>
+              <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                  <a href="/om" class="hover:underline me-4 md:me-6">
+                    Om
                   </a>
-                </div>
-              </div>
-              <hr class="border-gray-600" />
-              <p class="w-full text-center my-12 text-slate-200">Copyright © </p>
+                </li>
+                <li>
+                  <a href="/kontakt" class="hover:underline me-4 md:me-6">
+                    Kontakt
+                  </a>
+                </li>
+              </ul>
             </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+              © 2023{" "}
+              <a href="" class="hover:underline">
+                Folkets reklam
+              </a>
+              . All Rights Reserved.
+            </span>
           </div>
-        </div>
+        </footer>
       </div>
     </>
   );
