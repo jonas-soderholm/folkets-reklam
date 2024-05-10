@@ -27,7 +27,7 @@ function MapCommercials() {
   }, []);
 
   const handleCardClick = (commercial) => {
-    const url = `/donations/${commercial.id}`;
+    const url = `/donations/${commercial._id}`;
     window.location.href = url;
   };
 
@@ -39,7 +39,7 @@ function MapCommercials() {
           .filter((commercial) => commercial.status === selectedStatus)
           .map((commercial) => (
             <div
-              key={commercial.id}
+              key={commercial._id}
               className="commercials-cards flex justify-between mx-auto bg-[#cacaca] p-4 rounded-xl shadow-slate-500 shadow-2xl cursor-pointer hover-zoom"
               onClick={() => handleCardClick(commercial)}
             >

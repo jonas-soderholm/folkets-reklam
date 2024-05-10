@@ -1,8 +1,18 @@
 from django.http import HttpResponse, JsonResponse
 from .models import OngoingCommercial
 from django.core.serializers import serialize
+from folkets_app.mongo_connection import dbname, collection
+
+# def ongoing_commercials(request):
+#     ongoing_commercials = OngoingCommercial.objects.all().values()
+#     return JsonResponse(list(ongoing_commercials), safe=False)
 
 def ongoing_commercials(request):
-    ongoing_commercials = OngoingCommercial.objects.all().values()
-    return JsonResponse(list(ongoing_commercials), safe=False)
+    # Fetch users from MongoDB collection
+    commercial = collection.find({})
 
+    # Convert ObjectId instances to strings
+    commercial_list = [{**commercial, "_id": str(commercial["_id"])} for commercial in commercial]
+
+    # Return JSON response
+    return JsonResponse(commercial_list, safe=False)

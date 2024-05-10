@@ -8,6 +8,8 @@ function DonationDetail() {
   const { selectedCommercial, setSelectedCommercial } = useSharedState();
   const [filteredCommercial, setFilteredCommercial] = useState(null);
 
+  console.log(id);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,10 +19,8 @@ function DonationDetail() {
         }
 
         const data = await response.json();
-        console.log(data);
         setSelectedCommercial(data);
-
-        const foundCommercial = data.find((commercial) => commercial.id === parseInt(id));
+        const foundCommercial = data.find((commercial) => commercial._id === id.toString());
         setFilteredCommercial(foundCommercial);
       } catch (error) {
         console.error("Error fetching data");

@@ -8,7 +8,7 @@ function Header() {
   };
 
   return (
-    <header className="relative dark:bg-neutral-800 text-white">
+    <header className="dark:bg-neutral-800 text-white sticky top-0 z-50">
       <div className="p-3 flex justify-between items-center">
         <div className="flex items-center">
           <a href="/">
