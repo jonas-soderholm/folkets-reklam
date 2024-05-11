@@ -32,7 +32,7 @@ DEBUG = os.getenv('DEBUG')
 
 # ALLOWED_HOSTS = ['*']
 # CORS_ALLOW_ALL_ORIGINS = True
-ALLOWED_HOSTS = [os.getenv('ALLOWED', 'localhost')]
+ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '').split(',')]
 
 CORS_ORIGIN_WHITELIST = [
     os.getenv('ALLOWED', 'localhost'),
