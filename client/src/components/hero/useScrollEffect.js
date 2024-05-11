@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export function useScrollEffect() {
   const [backgroundZoom, setBackgroundZoom] = useState(100);
-  const [textZoom, setTextZoom] = useState(30);
+  const [textZoom, setTextZoom] = useState(45);
 
   useEffect(() => {
     const handleScroll = () => {
