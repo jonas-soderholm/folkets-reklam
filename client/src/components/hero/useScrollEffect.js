@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
 export function useScrollEffect() {
-  const [backgroundZoom, setBackgroundZoom] = useState(100);
-  const [textZoom, setTextZoom] = useState(45);
+  const [backgroundZoom, setBackgroundZoom] = useState(0);
+  const [textOpacity, setTextOpacity] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const newBackgroundZoom = 100 + scrollY * 0.04;
-      const newTextZoom = 45 + scrollY * 0.02;
+      const newBackgroundZoom = scrollY * 0.04;
+      const newTextOpacity = 1 - scrollY * 0.005;
 
       setBackgroundZoom(newBackgroundZoom);
-      setTextZoom(newTextZoom);
+      setTextOpacity(newTextOpacity < 0 ? 0 : newTextOpacity); // Ensure opacity is not less than 0
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,5 +21,5 @@ export function useScrollEffect() {
     };
   }, []);
 
-  return { backgroundZoom, textZoom };
+  return { backgroundZoom, textOpacity };
 }

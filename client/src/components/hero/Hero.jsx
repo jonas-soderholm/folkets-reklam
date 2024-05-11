@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
-import ActiveCommercials from "../commercials/ActiveCommercials";
 import { useScrollEffect } from "./useScrollEffect";
 
 function Hero() {
-  const { backgroundZoom, textZoom } = useScrollEffect();
+  const { backgroundZoom, textOpacity } = useScrollEffect();
 
-  // Effect to handle background and text zooming on scroll over hero image
   useEffect(() => {
     const backgroundImage = document.getElementById("backgroundImage");
+    const textElement = document.getElementById("heroText");
 
     if (backgroundImage) {
-      backgroundImage.style.backgroundSize = `${backgroundZoom}%`;
+      backgroundImage.style.transform = `scale(${1 + backgroundZoom / 100})`;
       backgroundImage.style.backgroundPosition = "center";
     }
-  }, [backgroundZoom]);
+    if (textElement) {
+      textElement.style.opacity = textOpacity;
+    }
+  }, [backgroundZoom, textOpacity]);
 
   return (
     <>
@@ -21,7 +23,7 @@ function Hero() {
         {/* Hero background image */}
         <div
           id="backgroundImage"
-          className="h-full w-full md:scale-[1.2] scale-[2.5] relative opacity-100"
+          className="fixed inset-0 w-full h-full bg-cover bg-no-repeat opacity-100"
           style={{
             backgroundImage: 'url("./flowers_4.webp")',
           }}
@@ -29,13 +31,21 @@ function Hero() {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         {/* Hero information */}
-      </div>
-      <div
-        className="header flex justify-center items-center fixed 
-        top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        style={{ top: "35%", left: "50%", transform: "translate(-50%, -50%)", fontSize: `${textZoom}px` }}
-      >
-        <h1 className="text-white text-center whitespace-nowrap">Gör din röst hörd!</h1>
+        <div
+          id="heroText"
+          className="header flex justify-center items-center fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          style={{
+            top: "35%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            opacity: textOpacity,
+            textAlign: "center",
+          }}
+        >
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center whitespace-nowrap">
+            Gör din röst hörd!
+          </h1>
+        </div>
       </div>
     </>
   );
