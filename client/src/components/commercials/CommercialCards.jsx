@@ -17,7 +17,6 @@ function MapCommercials() {
 
         const data = await response.json();
         setCommercials(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching data");
       }

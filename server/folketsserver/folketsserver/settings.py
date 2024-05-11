@@ -31,7 +31,12 @@ SECRET_KEY = 'django-insecure-1rs%#@=78n6x*65b&8g1i4s%b(d-2l7_n0i+&+n__rxcyqb%of
 DEBUG = os.getenv('DEBUG')
 
 # ALLOWED_HOSTS = ['*']
+# CORS_ALLOW_ALL_ORIGINS = True
 ALLOWED_HOSTS = [os.getenv('ALLOWED', 'localhost')]
+
+CORS_ORIGIN_WHITELIST = [
+    os.getenv('ALLOWED', 'localhost'),
+]
 
 # Application definition
 
@@ -60,9 +65,6 @@ MIDDLEWARE = [
 
 # CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = [
-    os.getenv('ALLOWED', 'localhost'),
-]
 
 ROOT_URLCONF = 'folketsserver.urls'
 

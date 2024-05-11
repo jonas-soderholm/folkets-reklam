@@ -6,7 +6,6 @@ function DropDownMenu() {
 
   const handleStatusChange = (event) => {
     setSelectedStatus(event.target.value);
-    // console.log(selectedStatus);
   };
 
   return (

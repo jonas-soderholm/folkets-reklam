@@ -6,7 +6,7 @@ function About() {
   return (
     <>
       <img
-        class="flex md:w-[25rem] md:h-auto h-auto w-[20rem] mx-auto *:rounded-lg object-cover mt-10"
+        className="flex md:w-[25rem] md:h-auto h-auto w-[20rem] mx-auto *:rounded-lg object-cover mt-10"
         src="/flowers_3.webp"
         alt=""
       />

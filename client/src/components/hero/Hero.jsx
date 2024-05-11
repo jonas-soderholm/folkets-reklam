@@ -24,10 +24,6 @@ function Hero() {
           className="h-full w-full md:scale-[1.2] scale-[2.5] relative opacity-100"
           style={{
             backgroundImage: 'url("./flowers_4.webp")',
-            // backgroundSize: "cover",
-            // backgroundPosition: "center",
-            // backgroundRepeat: "repeat",
-            // transform: "scale(2)",
           }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -46,4 +42,3 @@ function Hero() {
 }
 
 export default Hero;
-// -translate-y-[10rem]

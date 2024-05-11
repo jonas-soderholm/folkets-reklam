@@ -28,7 +28,6 @@ function Header() {
           </svg>
         </button>
       </div>
-      {/* Adjusting the initial position and transition to expand down from just under the navbar */}
       <div
         className={`absolute top-full left-0 w-full dark:bg-neutral-700 z-50 overflow-hidden transition-height duration-300 ease-in-out ${
           isMenuOpen ? "max-h-96" : "max-h-0"

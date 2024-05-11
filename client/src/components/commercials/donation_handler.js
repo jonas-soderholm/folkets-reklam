@@ -1,6 +1,3 @@
-// import { useSharedState } from "../../SharedContext";
-// const { rerender, setRerenderCommercials } = useSharedState(); // Move inside the function
-
 // Donate update DB + rerender
 export async function donationHandler(id, amount) {
   try {
@@ -27,7 +24,6 @@ export async function updateDonationsOnDataBase(id, amount) {
       throw new Error("Failed to add donation");
     }
 
-    console.log("Donation added successfully");
     return true; // Return true if donation added successfully
   } catch (error) {
     console.error("Error adding donation:", error.message);

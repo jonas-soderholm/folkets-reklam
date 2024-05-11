@@ -34,7 +34,7 @@ function DonationDetail() {
         <div className="flex flex-row flex-wrap items-center md:my-[15rem] justify-center mt-[2rem] ">
           <div className="image">
             <img
-              class="md:w-[25rem] md:h-auto h-auto w-[20rem] rounded-lg object-cover mb-[2rem]"
+              className="md:w-[25rem] md:h-auto h-auto w-[20rem] rounded-lg object-cover mb-[2rem]"
               src={filteredCommercial.img}
               alt=""
             />
