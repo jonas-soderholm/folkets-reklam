@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1rs%#@=78n6x*65b&8g1i4s%b(d-2l7_n0i+&+n__rxcyqb%of'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS', 'localhost')]
-
+ALLOWED_HOSTS = [os.getenv('ALLOWED', 'localhost')]
 
 # Application definition
 
@@ -57,7 +61,7 @@ MIDDLEWARE = [
 # CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
-    'https://folketsreklam.jonas-soderholm.dev/',
+    os.getenv('ALLOWED', 'localhost'),
 ]
 
 ROOT_URLCONF = 'folketsserver.urls'
