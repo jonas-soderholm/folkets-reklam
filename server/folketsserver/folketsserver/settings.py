@@ -24,14 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
+# ALLOWED_HOSTS = ['*']
+# CORS_ALLOW_ALL_ORIGINS = True
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-1rs%#@=78n6x*65b&8g1i4s%b(d-2l7_n0i+&+n__rxcyqb%of'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-# ALLOWED_HOSTS = ['*']
-# CORS_ALLOW_ALL_ORIGINS = True
 ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '').split(',')]
 
 CORS_ORIGIN_WHITELIST = [

@@ -2,11 +2,9 @@ from django.http import HttpResponse, JsonResponse
 from .models import OngoingCommercial
 from django.core.serializers import serialize
 from folkets_app.mongo_connection import dbname, collection
+from django_ratelimit.decorators import ratelimit
 
-# def ongoing_commercials(request):
-#     ongoing_commercials = OngoingCommercial.objects.all().values()
-#     return JsonResponse(list(ongoing_commercials), safe=False)
-
+@ratelimit(key='ip', rate='50/m', block=True)
 def ongoing_commercials(request):
     # Fetch users from MongoDB collection
     commercial = collection.find({})
