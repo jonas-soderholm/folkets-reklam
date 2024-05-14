@@ -3,7 +3,7 @@ import React from "react";
 function Contact() {
   return (
     <>
-      <div className="p-[2rem] md:mt-[4rem]">
+      <div className="py-[3rem] px-4">
         <section className="bg-white dark:bg-neutral-800 rounded-xl">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">

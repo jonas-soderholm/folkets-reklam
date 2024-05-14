@@ -37,15 +37,20 @@ const AppContent = () => {
 
   return (
     <>
-      {isHomePage || isDonationDetailPage || isAbout || isContact ? <Header /> : null}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/donations/:id" element={<DonationDetail />} />
-        <Route path="/om" element={<About />} />
-        <Route path="/kontakt" element={<Contact />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-      {isHomePage || isDonationDetailPage || isAbout || isContact ? <Footer /> : null}
+      {/* Make footer always on bottom */}
+      <div className="flex flex-col min-h-screen">
+        {isHomePage || isDonationDetailPage || isAbout || isContact ? <Header /> : null}
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/donations/:id" element={<DonationDetail />} />
+            <Route path="/om" element={<About />} />
+            <Route path="/kontakt" element={<Contact />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+        {isHomePage || isDonationDetailPage || isAbout || isContact ? <Footer /> : null}
+      </div>
     </>
   );
 };

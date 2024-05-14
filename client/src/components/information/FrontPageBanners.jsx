@@ -16,7 +16,7 @@ const banner_text = [
 function AboutBanner() {
   return (
     <>
-      <div className="relative bg-[#e1e1e1] justify-center">
+      <div className="relative bg-[#e1e1e1] justify-center pb-[10rem]">
         <div className=" bg-[#e7b9b0] md:p-[13rem] p-[2rem]  mt-[-1.2rem]">
           <h1 className=" md:text-5xl text-2xl md:mt-[0rem] mt-[6rem] max-w-[40rem]">{banner_text[0].Header}</h1>
           <p className=" md:text-xl text-s mt-7 md:mb-[0rem] mb-[6rem] max-w-[60rem]">{banner_text[0].info}</p>
